@@ -1,0 +1,107 @@
+String is a array of characters 
+# String in C
+
+In C, strings are represented as arrays of characters terminated by a **null character (`\0`)**. Here’s the basic syntax for declaring and initializing strings:
+
+## 1. **Declaring a String**
+```c
+char str[size];
+```
+- `char` – Data type for characters  
+- `str` – Name of the string (array)  
+- `size` – Size of the character array  
+
+---
+
+## 2. **Initializing a String**
+### (a) Using a character array:
+```c
+char str[] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+### (b) Using a string literal:
+```c
+char str[] = "Hello";
+```
+- The compiler automatically adds the `\0` at the end.  
+
+---
+
+## 3. **Assigning a String After Declaration**
+You **cannot assign** a string directly using `=` after declaring it as an array:
+```c
+char str[10];
+str = "Hello"; // ❌ Invalid
+```
+Instead, use `strcpy()` from `<string.h>`:
+```c
+#include <string.h>
+
+char str[10];
+strcpy(str, "Hello"); // ✅ Valid
+```
+
+---
+
+## 4. **Reading a String**
+Use `scanf()` or `gets()`:
+```c
+char str[100];
+scanf("%s", str); // Stops at whitespace
+```
+For reading a line with spaces:
+```c
+fgets(str, sizeof(str), stdin); // Reads until newline
+```
+
+---
+
+## 5. **Printing a String**
+Use `printf()`:
+```c
+printf("%s", str);
+```
+
+---
+
+## ✅ **Example Code**
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Declaring and initializing strings
+    char str1[] = "Hello"; // String literal
+    char str2[] = {'H', 'e', 'l', 'l', 'o', '\0'}; // Character array
+    
+    // Copying strings using strcpy
+    char str3[20];
+    strcpy(str3, "World");
+    
+    // Printing strings
+    printf("%s %s\n", str1, str3);
+    
+    // Reading a string using scanf
+    char str4[100];
+    printf("Enter a string: ");
+    scanf("%s", str4);
+    printf("You entered: %s\n", str4);
+    
+    // Reading a string using fgets (to include spaces)
+    char str5[100];
+    printf("Enter a line: ");
+    fgets(str5, sizeof(str5), stdin);
+    printf("You entered: %s", str5);
+    
+    return 0;
+}
+```
+
+**Output:**
+```
+Hello World
+Enter a string: OpenAI
+You entered: OpenAI
+Enter a line: ChatGPT is cool
+You entered: ChatGPT is cool
+```

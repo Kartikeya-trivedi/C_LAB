@@ -1,0 +1,62 @@
+STRING FUNCTIONS IN C (string.h)
+
+1. strlen() – Get the length of a string
+   size_t strlen(const char *str);
+
+2. strcpy() – Copy a string
+   char *strcpy(char *dest, const char *src);
+
+3. strncpy() – Copy a specific number of characters
+   char *strncpy(char *dest, const char *src, size_t n);
+
+4. strcat() – Concatenate two strings
+   char *strcat(char *dest, const char *src);
+
+5. strncat() – Concatenate a specified number of characters
+   char *strncat(char *dest, const char *src, size_t n);
+
+6. strcmp() – Compare two strings
+   int strcmp(const char *str1, const char *str2);
+
+7. strncmp() – Compare a specified number of characters
+   int strncmp(const char *str1, const char *str2, size_t n);
+
+8. strchr() – Find the first occurrence of a character
+   char *strchr(const char *str, int c);
+
+9. strrchr() – Find the last occurrence of a character
+   char *strrchr(const char *str, int c);
+
+10. strstr() – Find a substring in a string
+    char *strstr(const char *haystack, const char *needle);
+
+11. strtok() – Split a string into tokens
+    char *strtok(char *str, const char *delim);
+
+12. memset() – Fill memory with a constant value
+    void *memset(void *str, int c, size_t n);
+
+13. memcpy() – Copy memory area
+    void *memcpy(void *dest, const void *src, size_t n);
+
+14. memmove() – Move memory area (handles overlap)
+    void *memmove(void *dest, const void *src, size_t n);
+
+15. strspn() – Get the length of a prefix substring
+    size_t strspn(const char *str1, const char *str2);
+
+16. strcspn() – Get the length of a non-matching prefix
+    size_t strcspn(const char *str1, const char *str2);
+
+17. strpbrk() – Find the first matching character
+    char *strpbrk(const char *str1, const char *str2);
+
+18. strcoll() – Compare two strings using locale-specific order
+    int strcoll(const char *str1, const char *str2);
+
+19. strxfrm() – Transform a string based on locale
+    size_t strxfrm(char *dest, const char *src, size_t n);
+
+20. strdup() – Duplicate a string (non-standard)
+    char *strdup(const char *str);
+ 
